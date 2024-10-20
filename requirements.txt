@@ -2,6 +2,5 @@ streamlit==1.33.0
 streamlit-navigation-bar==3.3.0
 ultralytics==8.3.13
 numpy==1.26.0
-opencv-python
 opencv-python-headless
 torch==2.3.0
