@@ -79,7 +79,7 @@ def reset():
     st.session_state.augment = DEFAULT_AUGMENT
     st.session_state.device = DEFAULT_DEVICE
 
-def palyground():
+def playground():
     """
     主函数，用于处理信号波检测应用的主要逻辑。
     
