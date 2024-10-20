@@ -41,6 +41,6 @@ page = st_navbar(pages,styles=styles,options=options)
 if page == "Home":
     pg.home()
 elif page == "Playground":
-    pg.palyground()
+    pg.playground()
 elif page == "Tutorials":
     pg.tutorials()
