@@ -1,4 +1,2 @@
-from .home import home
+from .introduce import introduce
 from .playground import playground
-from .tutorials import tutorials
-

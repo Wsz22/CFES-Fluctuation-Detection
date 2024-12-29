@@ -1,18 +1,20 @@
 import streamlit as st
 from streamlit_navigation_bar import st_navbar
 import pages as pg
+
 # from pages import playground as pg
 # from pages import home
 # from pages import tutorials
 
 # 设置页面布局为宽屏,设置页面标题为"CFES signal wave detection",设置页面图标为火箭,设置初始侧边栏状态为折叠
-st.set_page_config(page_title="CFES signal wave detection",
-                       layout="wide",
-                       page_icon=":rocket:", 
-                       initial_sidebar_state='collapsed',
+st.set_page_config(
+    page_title="CFES signal wave detection",
+    layout="wide",
+    page_icon=":rocket:",
+    initial_sidebar_state="collapsed",
 )
 # 创建一个导航栏
-pages = ["Home", "Playground", "Tutorials", "Development", "Download"]
+pages = ["Introduce", "Playground"]
 styles = {
     "nav": {
         "background-color": "rgb(20,140,253)",
@@ -32,15 +34,13 @@ styles = {
     "hover": {
         "background-color": "rgba(255, 255, 255, 0.35)",
     },
-    }
+}
 options = {
     "show_menu": True,
     "show_sidebar": True,
-    }
-page = st_navbar(pages,styles=styles,options=options)
-if page == "Home":
-    pg.home()
+}
+page = st_navbar(pages, styles=styles, options=options)
+if page == "Introduce":
+    pg.introduce()
 elif page == "Playground":
     pg.playground()
-elif page == "Tutorials":
-    pg.tutorials()
