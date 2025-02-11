@@ -18,7 +18,7 @@ FONT_COLOR = (255, 255, 255)
 DEFAULT_CONF = 0.25
 DEFAULT_IOU = 0.7
 DEFAULT_AUGMENT = False
-DEFAULT_DEVICE = "cpu"
+DEFAULT_DEVICE = "CPU"
 
 
 def yoloDetect(uploaded_file, conf, iou, augment, device):
@@ -139,15 +139,6 @@ def get_available_devices():
     return devices
 
 
-def reset():
-    """
-    重置参数到默认值
-    """
-    st.session_state.conf = DEFAULT_CONF
-    st.session_state.iou = DEFAULT_IOU
-    st.session_state.augment = DEFAULT_AUGMENT
-    st.session_state.device = DEFAULT_DEVICE
-
 
 def playground():
     """
@@ -218,12 +209,7 @@ def playground():
 
         # 操作按钮
         st.divider()
-        col1, col2 = st.columns(2)
-        with col1:
-            if st.button("🔄 重置参数", use_container_width=True):
-                reset()
-        with col2:
-            detect_clicked = st.button("🔍 开始检测", use_container_width=True)
+        detect_clicked = st.button("🔍 开始检测", use_container_width=True)
 
     # ========== 主界面内容 ==========
     # 样本图片展示区
