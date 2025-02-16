@@ -263,6 +263,7 @@ def playground():
         try:
             # 执行检测
             start_time = time.time()
+            # result_img是检测后带标记的图片，detection_data是检测数数据结果
             result_img, detection_data = yoloDetect(
                 st.session_state.original_img,
                 st.session_state.conf,
@@ -283,10 +284,11 @@ def playground():
 
             # 显示数据表格
             st.subheader("检测数据详情", divider="grey")
+            # 使用pandas的DataFrame对象储存检测结果，方便以表格的形式展示
             df = pd.DataFrame(detection_data)
             st.dataframe(
-                df,
-                column_config={
+                df,#数据
+                column_config={  # 表头
                     "center_x": st.column_config.NumberColumn("X坐标", format="%d px"),
                     "center_y": st.column_config.NumberColumn("Y坐标", format="%d px"),
                     "width": st.column_config.NumberColumn("宽度", format="%d px"),
